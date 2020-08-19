@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="John Doe">
+  <meta name="dcterms.date" content="2020-08-18">
+  <title>Demo Slide</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="./dist/reset.css">
+  <link rel="stylesheet" href="./dist/reveal.css">
+  <link rel="stylesheet" href="./plugin/highlight/monokai.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="./dist/theme/black.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Demo Slide</h1>
+  <p class="author">John Doe</p>
+  <p class="date">August 18, 2020</p>
+</section>
+
+<section id="foo" class="title-slide slide level1">
+<h1>Foo</h1>
+<pre class="javascript"><code>const l = &quot;try&quot;;</code></pre>
+</section>
+
+<section>
+<section id="bar" class="title-slide slide level1">
+<h1>Bar</h1>
+
+</section>
+<section id="section" class="slide level2" data-background-image="https://placekitten.com/1200/900">
+<h2 data-background-image="https://placekitten.com/1200/900"></h2>
+<p>background</p>
+</section>
+<section id="level-2" class="slide level2">
+<h2>Level 2</h2>
+<section>
+<pre><code data-trim data-noescape>
+(def lazy-fib
+  (concat
+   [0 1]
+   ((fn rfib [a b]
+        (lazy-cons (+ a b) (rfib b (+ a b)))) 0 1)))
+  </code></pre>
+</section>
+</section>
+<section id="another-level-2" class="slide level2">
+<h2>Another level 2</h2>
+<p>with text</p>
+</section></section>
+<section id="level-1-again" class="title-slide slide level1">
+<h1>Level 1 again</h1>
+
+</section>
+    </div>
+  </div>
+
+  <script src="./dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="./plugin/notes/notes.js"></script>
+  <script src="./plugin/search/search.js"></script>
+  <script src="./plugin/zoom/zoom.js"></script>
+  <script src="./plugin/highlight/highlight.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+
+        // reveal.js plugins
+        plugins: [
+          RevealHighlight,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
