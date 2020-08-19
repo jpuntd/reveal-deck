@@ -2,30 +2,38 @@
 author: John Doe
 title: Demo Slide
 date: August 18, 2020
+theme: blood
 ---
 
-# Foo
+# Code
 
 ```javascript
-const l = "try";
+let arr1 = ["it's Sunny in", "", "California"];
+
+arr1.map((x) => x.split(" "));
+// [["it's","Sunny","in"],[""],["California"]]
+
+arr1.flatMap((x) => x.split(" "));
+// ["it's","Sunny","in", "", "California"]
 ```
 
-# Bar
+# Support for ...
 
-## {data-background-image="https://placekitten.com/1200/900"}
+## images {data-background-image="https://placekitten.com/1200/900"}
 
-background
+## and emoji
 
-## Level 2
+:car: :sandwich:
+
+## incremental highlighting of code samples
 
 <section>
-  <pre><code data-trim data-noescape>
-(def lazy-fib
-  (concat
-   [0 1]
-   ((fn rfib [a b]
-        (lazy-cons (+ a b) (rfib b (+ a b)))) 0 1)))
-  </code></pre>
+<pre><code data-line-numbers="3|4">
+sealed class Either<out A, out B> {
+  data class Left<out A>(val a: A) : Either<A, Nothing>()
+  data class Right<out B>(val b: B) : Either<Nothing, B>()
+}
+</code></pre>
 </section>
 
 ## Another level 2
