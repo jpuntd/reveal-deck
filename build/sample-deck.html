@@ -59,7 +59,7 @@ arr1.flatMap((x) =&gt; x.split(&quot; &quot;));
 <section id="incremental-highlighting-of-code-samples" class="slide level2">
 <h2>incremental highlighting of code samples</h2>
 <section>
-<pre><code data-line-numbers="3|4">
+<pre><code data-trim data-line-numbers="2|3">
 sealed class Either<out A, out B> {
   data class Left<out A>(val a: A) : Either<A, Nothing>()
   data class Right<out B>(val b: B) : Either<Nothing, B>()
@@ -73,7 +73,9 @@ sealed class Either<out A, out B> {
 </section></section>
 <section id="level-1-again" class="title-slide slide level1">
 <h1>Level 1 again</h1>
-
+<pre id="mycode" class="haskell" data-line-numbers="2|3"><code>qsort []     = []
+qsort (x:xs) = qsort (filter (&lt; x) xs) ++ [x] ++
+               qsort (filter (&gt;= x) xs)</code></pre>
 </section>
     </div>
   </div>
@@ -87,7 +89,12 @@ sealed class Either<out A, out B> {
   <script src="./plugin/highlight/highlight.js"></script>
 
   <script>
-
+      // pandoc adds data-attributes for fenced code blocks to pre tag, copy them to code tag
+      document.querySelectorAll('pre > code').forEach(codeBlock => {
+        codeBlock.parentNode.attributes.forEach(({ nodeName, nodeValue }) => {
+          codeBlock.setAttribute(nodeName === 'id' ? 'data-id' : nodeName, nodeValue)
+        });
+      });    
       // Full list of configuration options available at:
       // https://revealjs.com/config/
       Reveal.initialize({

@@ -28,7 +28,7 @@ arr1.flatMap((x) => x.split(" "));
 ## incremental highlighting of code samples
 
 <section>
-<pre><code data-line-numbers="3|4">
+<pre><code data-trim data-line-numbers="2|3">
 sealed class Either<out A, out B> {
   data class Left<out A>(val a: A) : Either<A, Nothing>()
   data class Right<out B>(val b: B) : Either<Nothing, B>()
@@ -41,3 +41,9 @@ sealed class Either<out A, out B> {
 with text
 
 # Level 1 again
+
+```{#mycode .haskell data-line-numbers="2|3"}
+qsort []     = []
+qsort (x:xs) = qsort (filter (< x) xs) ++ [x] ++
+               qsort (filter (>= x) xs)
+```

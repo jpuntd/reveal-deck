@@ -80,7 +80,12 @@ $if(mathjax)$
 $endif$
 
   <script>
-
+      // pandoc adds data-attributes for fenced code blocks to pre tag, copy them to code tag
+      document.querySelectorAll('pre > code').forEach(codeBlock => {
+        codeBlock.parentNode.attributes.forEach(({ nodeName, nodeValue }) => {
+          codeBlock.setAttribute(nodeName === 'id' ? 'data-id' : nodeName, nodeValue)
+        });
+      });    
       // Full list of configuration options available at:
       // https://revealjs.com/config/
       Reveal.initialize({
