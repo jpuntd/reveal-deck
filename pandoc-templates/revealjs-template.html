@@ -81,9 +81,9 @@ $endif$
 
   <script>
       // pandoc adds data-attributes for fenced code blocks to pre tag, copy them to code tag
-      document.querySelectorAll('pre > code').forEach(codeBlock => {
-        codeBlock.parentNode.attributes.forEach(({ nodeName, nodeValue }) => {
-          codeBlock.setAttribute(nodeName === 'id' ? 'data-id' : nodeName, nodeValue)
+      Array.prototype.forEach.call(document.querySelectorAll('pre > code'), codeBlock => {
+        Array.prototype.forEach.call(codeBlock.parentNode.attributes, ({ name, value }) => {
+          codeBlock.setAttribute(name === 'id' ? 'data-id' : name, value);
         });
       });    
       // Full list of configuration options available at:
