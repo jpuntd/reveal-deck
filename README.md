@@ -1,6 +1,6 @@
 # reveal-deck
 
-Setup to produce a [reveal.js](revealjs.com) slide deck using [pandoc](pandoc.org)
+Setup to produce a [reveal.js](https://revealjs.com) slide deck using [pandoc](https://pandoc.org)
 
 ## Usage
 
